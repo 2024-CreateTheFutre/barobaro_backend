@@ -50,3 +50,4 @@ app.listen(process.env.serverUrl, (req, res) => {
 })
 
 console.log("node_modules 파일 제거")
+console.log('test')
