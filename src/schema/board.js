@@ -30,6 +30,10 @@ const boardSchema = new Schema({
         type : Number,
         required : false
     },
+    event_date : {
+        type : Date,
+        required : true
+    }
 
     // date: {
     //     type: Date,

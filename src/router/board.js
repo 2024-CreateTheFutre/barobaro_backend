@@ -5,8 +5,8 @@ import { counter } from '../schema/counter.js';
 
 const BoardRouter = Router();
 
-BoardRouter.post('/write', async (req, res) => { // board_id 생성하는 코드 필요
-    counter.insertOne({_id: 'req.body.title', seq: 0});
+BoardRouter.post('/write', async (req, res) => {  
+    counter.insertOne({_id: 'req.body.title', seq: 0}); // MongoDB에 auto_increment를 구현하기 위한 코드
     function getNextSequence(name) {
         var ret = counter.findAndModify({
             query: {_id: name},
@@ -24,6 +24,7 @@ BoardRouter.post('/write', async (req, res) => { // board_id 생성하는 코드
         content: req.body.content,
         image: req.body.image,
         major: req.body.major,
+        event_date: req.body.event_date,
         board_id: getNextSequence('req.body.title')
     }
     const result = await board.create(Post); // insertOne 왜 삽입 안됨?
