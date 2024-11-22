@@ -47,6 +47,4 @@ app.get('/main', async (req, res) => {
 
 app.listen(process.env.serverUrl, (req, res) => {
     console.log("listen at :  " + process.env.serverUrl);
-})
-
-console.log("node_modules 파일 제거")
+});
